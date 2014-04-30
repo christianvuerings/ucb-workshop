@@ -1,0 +1,4 @@
+platform :ios, '6.0'
+xcodeproj 'SwaggerClient/SwaggerClient.xcodeproj'
+pod 'AFNetworking', '~> 1.0'
+

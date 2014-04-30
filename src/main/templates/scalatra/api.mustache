@@ -1,0 +1,86 @@
+package {{package}}
+
+import service._
+
+{{#imports}}import {{import}}
+{{/imports}}
+
+import org.scalatra.{ TypedParamSupport, ScalatraServlet }
+import org.scalatra.swagger._
+import org.json4s._
+import org.json4s.JsonDSL._
+import org.scalatra.json.{ JValueResult, JacksonJsonSupport }
+
+import scala.collection.JavaConverters._
+
+class {{className}} (implicit val swagger: Swagger) extends ScalatraServlet 
+    with JacksonJsonSupport
+    with SwaggerSupport {
+  protected implicit val jsonFormats: Formats = DefaultFormats
+
+  protected val applicationDescription: String = "{{className}}"
+  override protected val applicationName: Option[String] = Some("{{baseName}}")
+
+  before() {
+    contentType = formats("json")
+    response.headers += ("Access-Control-Allow-Origin" -> "*")
+  }
+
+  error {
+    case e => {
+      Map("message" -> e.getMessage, "code" -> "500")
+    }
+  }
+
+{{#operations}}
+{{#operation}}
+  {{newline}}
+
+  val {{nickname}}Operation = (apiOperation[{{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}Unit{{/returnType}}]("{{nickname}}")
+      summary "{{{summary}}}"
+      parameters(
+        {{#allParams}}
+        {{#queryParameter}}
+        queryParam[{{dataType}}]("{{paramName}}").description(""){{^required}}.optional{{/required}}{{#defaultValue}}.defaultValue({{{defaultValue}}}){{/defaultValue}}
+        {{#allowableValues}}.{{allowableValues}}{{/allowableValues}}
+        {{/queryParameter}}
+        {{#pathParameter}}
+        pathParam[{{dataType}}]("{{paramName}}").description(""){{#defaultValue}}.defaultValue({{{defaultValue}}}){{/defaultValue}}
+        {{#allowableValues}}.{{allowableValues}}{{/allowableValues}}
+        {{/pathParameter}}
+        {{#headerParameter}}
+        headerParam[{{dataType}}]("{{paramName}}").description(""){{^required}}.optional{{/required}}{{#defaultValue}}.defaultValue({{{defaultValue}}}){{/defaultValue}}
+        {{#allowableValues}}.{{allowableValues}}{{/allowableValues}}
+        {{/headerParameter}}
+        {{#bodyParameter}}
+        bodyParam[{{dataType}}]("{{paramName}}").description(""){{^required}}.optional{{/required}}{{#defaultValue}}.defaultValue({{{defaultValue}}}){{/defaultValue}}
+        {{/bodyParameter}}
+        {{#hasMore}},{{/hasMore}}
+        {{/allParams}})
+  )
+
+  {{httpMethod}}("{{path}}",operation({{nickname}}Operation)) {
+    {{#allParams}}
+    {{#pathParameter}}
+    val {{paramName}}: {{dataType}} = params.getAs[{{dataType}}]("{{paramName}}"){{#required}}.getOrElse(halt(400)){{/required}}
+    {{/pathParameter}}
+
+    {{#queryParameter}}
+    val {{paramName}}: {{dataType}} = params.getAs[{{dataType}}]("{{paramName}}"){{#required}}.getOrElse(halt(400)){{/required}}
+    {{/queryParameter}}
+
+    {{#headerParameter}}
+    val {{paramName}}: {{dataType}} = params.getAs[{{dataType}}]("{{paramName}}"){{#required}}.getOrElse(halt(400)){{/required}}
+    {{/headerParameter}}
+
+    {{#bodyParameter}}
+    val {{paramName}} = parsedBody.extract[{{dataType}}]
+    {{/bodyParameter}}
+    {{newline}}
+    {{/allParams}}
+    {{className}}Service.{{nickname}}({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}})
+  }
+
+{{/operation}}
+{{/operations}}
+}

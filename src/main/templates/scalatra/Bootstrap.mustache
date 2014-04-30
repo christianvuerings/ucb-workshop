@@ -1,0 +1,38 @@
+import {{apiPackage}}._
+
+import config._
+import service.ScheduleSupport
+
+import com.wordnik.mongo.connection._
+
+import akka.actor.ActorSystem
+import com.wordnik.swagger.app.{ResourcesApp, SwaggerApp}
+import javax.servlet.ServletContext
+import org.scalatra.LifeCycle
+
+class ScalatraBootstrap extends LifeCycle {
+  implicit val swagger = new SwaggerApp
+
+  override def init(context: ServletContext) {
+    implicit val system = ActorSystem("mySystem")
+    try {
+      {{#apis}}
+      context mount (new {{className}}, "/{{name}}/*")
+      {{/apis}}
+
+      context mount (new ResourcesApp, "/api-docs/*")
+
+      MongoDBConnectionManager.getConnection("phidgets", 
+        Configurator("dbhost"), 
+        Configurator.asInt("dbport"), 
+        Configurator("database"), 
+        Configurator("dbuser"), 
+        Configurator("dbpassword"), 
+        SchemaType.READ_WRITE)
+
+      ScheduleSupport.startUpdate
+    } catch {
+      case e: Throwable => e.printStackTrace()
+    }
+  }
+}

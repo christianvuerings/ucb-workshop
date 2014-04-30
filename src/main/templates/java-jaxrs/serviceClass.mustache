@@ -1,0 +1,14 @@
+package {{package}};
+
+import com.wordnik.model.*;
+
+public class {{className}}Service {
+  {{#operations}}
+  {{#operation}}
+  public static {{{returnType}}} {{nickname}}({{#allParams}}{{{dataType}}} {{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) {
+    {{#returnType}}return null;
+    {{/returnType}}
+  }
+  {{/operation}}
+  {{/operations}}
+}

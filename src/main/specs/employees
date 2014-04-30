@@ -1,0 +1,1204 @@
+{
+  "apiVersion": "1.0.0",
+  "swaggerVersion": "1.2",
+  "basePath": "https://apis-qa-sandbox.berkeley.edu/",
+  "notes": "This is only a sandbox, data model returned is accurate but data values are fictional",
+  "resourcePath": "/employees",
+  "apis": [
+    {
+      "path": "/employees/{id}/identifier",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find Employee Identifier by ID",
+          "notes": "Find Employee Identifier by ID",
+          "type": "PersonResponse",
+          "nickname": "findPersonIdentifier",
+          "produces": [
+            "application/xml",
+            "application/json",
+            "text/html",
+            "text/plain"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "description": "ID of Employee Identifier to fetch",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "allowMultiple": false
+            },
+            {
+              "name": "effdt",
+              "description": "Return effective dated records",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "boolean"
+            },
+            {
+              "name": "app_id",
+              "threescale_name": "app_ids",
+              "description": "API ID",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            },
+            {
+              "name": "app_key",
+              "threescale_name": "app_keys",
+              "description": "API Key",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            }
+          ],
+          "errorResponses": [
+            {
+              "code": 200,
+              "message": "Employee Record Found"
+            },
+            {
+              "code": 400,
+              "message": "Invalid Employee ID supplied"
+            },
+            {
+              "code": 404,
+              "message": "Employee not found"
+            },
+            {
+              "code": 403,
+              "message": "Access Denied"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/employees/{id}/email",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find Employee Email by ID",
+          "notes": "Find Employee Email by ID",
+          "type": "PersonResponse",
+          "nickname": "findPersonEmail",
+          "produces": [
+            "application/xml",
+            "application/json",
+            "text/html",
+            "text/plain"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "description": "ID of Employee Email to fetch",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "allowMultiple": false
+            },
+            {
+              "name": "effdt",
+              "description": "Return effective dated records",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "boolean"
+            },
+            {
+              "name": "app_id",
+              "threescale_name": "app_ids",
+              "description": "API ID",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            },
+            {
+              "name": "app_key",
+              "threescale_name": "app_keys",
+              "description": "API Key",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            }
+          ],
+          "errorResponses": [
+            {
+              "code": 200,
+              "message": "Employee Record Found"
+            },
+            {
+              "code": 400,
+              "message": "Invalid Employee ID supplied"
+            },
+            {
+              "code": 404,
+              "message": "Employee not found"
+            },
+            {
+              "code": 403,
+              "message": "Access Denied"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/employees/{id}/phone",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find Employee Phone by ID",
+          "notes": "Find Employee Phone by ID",
+          "type": "PersonResponse",
+          "nickname": "findPersonPhone",
+          "produces": [
+            "application/xml",
+            "application/json",
+            "text/html",
+            "text/plain"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "description": "ID of Employee Phone to fetch",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "allowMultiple": false
+            },
+            {
+              "name": "effdt",
+              "description": "Return effective dated records",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "boolean"
+            },
+            {
+              "name": "app_id",
+              "threescale_name": "app_ids",
+              "description": "API ID",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            },
+            {
+              "name": "app_key",
+              "threescale_name": "app_keys",
+              "description": "API Key",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            }
+          ],
+          "errorResponses": [
+            {
+              "code": 200,
+              "message": "Employee Record Found"
+            },
+            {
+              "code": 400,
+              "message": "Invalid Employee ID supplied"
+            },
+            {
+              "code": 404,
+              "message": "Employee not found"
+            },
+            {
+              "code": 403,
+              "message": "Access Denied"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/employees/{id}/department",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find Employee Department by ID",
+          "notes": "Find Employee Department by ID",
+          "type": "PersonResponse",
+          "nickname": "findPersonDepartment",
+          "produces": [
+            "application/xml",
+            "application/json",
+            "text/html",
+            "text/plain"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "description": "ID of Employee Department to fetch",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "allowMultiple": false
+            },
+            {
+              "name": "effdt",
+              "description": "Return effective dated records",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "boolean"
+            },
+            {
+              "name": "app_id",
+              "threescale_name": "app_ids",
+              "description": "API ID",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            },
+            {
+              "name": "app_key",
+              "threescale_name": "app_keys",
+              "description": "API Key",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            }
+          ],
+          "errorResponses": [
+            {
+              "code": 200,
+              "message": "Employee Record Found"
+            },
+            {
+              "code": 400,
+              "message": "Invalid Employee ID supplied"
+            },
+            {
+              "code": 404,
+              "message": "Employee not found"
+            },
+            {
+              "code": 403,
+              "message": "Access Denied"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/employees/{id}",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find Employee by ID",
+          "notes": "Find Employee by ID",
+          "type": "PersonResponse",
+          "nickname": "findPerson",
+          "produces": [
+            "application/xml",
+            "application/json",
+            "text/html",
+            "text/plain"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "description": "ID of Employee to fetch",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "allowMultiple": false
+            },
+            {
+              "name": "effdt",
+              "description": "Return effective dated records",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "boolean"
+            },
+            {
+              "name": "app_id",
+              "threescale_name": "app_ids",
+              "description": "API ID",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            },
+            {
+              "name": "app_key",
+              "threescale_name": "app_keys",
+              "description": "API Key",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            }
+          ],
+          "errorResponses": [
+            {
+              "code": 200,
+              "message": "Employee Record Found"
+            },
+            {
+              "code": 400,
+              "message": "Invalid Employee ID supplied"
+            },
+            {
+              "code": 404,
+              "message": "Employee not found"
+            },
+            {
+              "code": 403,
+              "message": "Access Denied"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/employees/{id}/name",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find Employee Name by ID",
+          "notes": "Find Employee Name by ID",
+          "type": "PersonResponse",
+          "nickname": "findPersonName",
+          "produces": [
+            "application/xml",
+            "application/json",
+            "text/html",
+            "text/plain"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "description": "ID of Employee Name to fetch",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "allowMultiple": false
+            },
+            {
+              "name": "effdt",
+              "description": "Return effective dated records",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "boolean"
+            },
+            {
+              "name": "app_id",
+              "threescale_name": "app_ids",
+              "description": "API ID",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            },
+            {
+              "name": "app_key",
+              "threescale_name": "app_keys",
+              "description": "API Key",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            }
+          ],
+          "errorResponses": [
+            {
+              "code": 200,
+              "message": "Employee Record Found"
+            },
+            {
+              "code": 400,
+              "message": "Invalid Employee ID supplied"
+            },
+            {
+              "code": 404,
+              "message": "Employee not found"
+            },
+            {
+              "code": 403,
+              "message": "Access Denied"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/employees/{id}/address",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "summary": "Find Employee Address by ID",
+          "notes": "Find Employee Address by ID",
+          "type": "PersonResponse",
+          "nickname": "findPersonAddress",
+          "produces": [
+            "application/xml",
+            "application/json",
+            "text/html",
+            "text/plain"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "description": "ID of Employee Address to fetch",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "allowMultiple": false
+            },
+            {
+              "name": "effdt",
+              "description": "Return effective dated records",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "boolean"
+            },
+            {
+              "name": "app_id",
+              "threescale_name": "app_ids",
+              "description": "API ID",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            },
+            {
+              "name": "app_key",
+              "threescale_name": "app_keys",
+              "description": "API Key",
+              "paramType": "query",
+              "required": true,
+              "allowMultiple": false,
+              "type": "string"
+            }
+          ],
+          "errorResponses": [
+            {
+              "code": 200,
+              "message": "Employee Record Found"
+            },
+            {
+              "code": 400,
+              "message": "Invalid Employee ID supplied"
+            },
+            {
+              "code": 404,
+              "message": "Employee not found"
+            },
+            {
+              "code": 403,
+              "message": "Access Denied"
+            },
+            {
+              "code": 500,
+              "message": "Internal server error"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Rate": {
+      "id": "Rate",
+      "required": [
+        "code",
+        "Amount",
+        "OffAboveScale"
+      ],
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "OffAboveScale": {
+          "type": "string"
+        }
+      }
+    },
+    "Department": {
+      "id": "Department",
+      "required": [
+        "EmplID",
+        "DeptId",
+        "DeptDesc"
+      ],
+      "properties": {
+        "EmplID": {
+          "type": "string"
+        },
+        "DeptId": {
+          "type": "string"
+        },
+        "DeptDesc": {
+          "type": "string"
+        }
+      }
+    },
+    "PersonResponse": {
+      "id": "PersonResponse",
+      "required": [
+        "Timestamp",
+        "Source",
+        "CorrelationId",
+        "PersonList"
+      ],
+      "properties": {
+        "Timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Source": {
+          "type": "string"
+        },
+        "CorrelationId": {
+          "type": "string"
+        },
+        "PersonList": {
+          "$ref": "PersonList"
+        }
+      }
+    },
+    "Name": {
+      "id": "Name",
+      "required": [
+        "PrefFirstName",
+        "EffectiveDate",
+        "EmplID",
+        "FirstName",
+        "LastName",
+        "MiddleName",
+        "NamePrefix",
+        "NameSuffix",
+        "NameType"
+      ],
+      "properties": {
+        "PrefFirstName": {
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "MiddleName": {
+          "type": "string"
+        },
+        "NamePrefix": {
+          "type": "string"
+        },
+        "NameSuffix": {
+          "type": "string"
+        },
+        "NameType": {
+          "type": "string"
+        }
+      }
+    },
+    "Pay": {
+      "id": "Pay",
+      "required": [
+        "EmplRecord",
+        "Rate",
+        "EmplID"
+      ],
+      "properties": {
+        "EmplRecord": {
+          "type": "string"
+        },
+        "Rate": {
+          "type": "array",
+          "items": {
+            "$ref": "Rate"
+          }
+        },
+        "EmplID": {
+          "type": "string"
+        }
+      }
+    },
+    "Address": {
+      "id": "Address",
+      "required": [
+        "AddressType",
+        "State",
+        "EmplID",
+        "Address1",
+        "Address2",
+        "Address3",
+        "City",
+        "PostCode",
+        "CountryCode"
+      ],
+      "properties": {
+        "AddressType": {
+          "type": "string"
+        },
+        "State": {
+          "type": "string"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "Address1": {
+          "type": "string"
+        },
+        "Address2": {
+          "type": "string"
+        },
+        "Address3": {
+          "type": "string"
+        },
+        "City": {
+          "type": "string"
+        },
+        "PostCode": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        }
+      }
+    },
+    "Position": {
+      "id": "Position",
+      "required": [
+        "EffectiveDate",
+        "EmplID",
+        "PostionNumber",
+        "PostionDesc",
+        "ReportsTo"
+      ],
+      "properties": {
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "PostionNumber": {
+          "type": "string"
+        },
+        "PostionDesc": {
+          "type": "string"
+        },
+        "ReportsTo": {
+          "type": "string"
+        }
+      }
+    },
+    "Email": {
+      "id": "Email",
+      "required": [
+        "EmplID",
+        "EmailType",
+        "EmailAddress",
+        "PrefEmailFlag"
+      ],
+      "properties": {
+        "EmplID": {
+          "type": "string"
+        },
+        "EmailType": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PrefEmailFlag": {
+          "type": "string"
+        }
+      }
+    },
+    "POI": {
+      "id": "POI",
+      "required": [
+        "Description",
+        "EffectiveDate",
+        "EmplID",
+        "EffectiveStatus",
+        "ExpectedEndDate"
+      ],
+      "properties": {
+        "Description": {
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "EffectiveStatus": {
+          "type": "string"
+        },
+        "ExpectedEndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "pOIType": {
+          "type": "string"
+        }
+      }
+    },
+    "Compensation": {
+      "id": "Compensation",
+      "required": [
+        "HourlyRate",
+        "MonthlyRate",
+        "AnnualRate",
+        "Pay",
+        "EmplID"
+      ],
+      "properties": {
+        "HourlyRate": {
+          "type": "string"
+        },
+        "MonthlyRate": {
+          "type": "string"
+        },
+        "AnnualRate": {
+          "type": "string"
+        },
+        "Pay": {
+          "$ref": "Pay"
+        },
+        "EmplID": {
+          "type": "string"
+        }
+      }
+    },
+    "Job": {
+      "id": "Job",
+      "required": [
+        "Location",
+        "Type",
+        "Position",
+        "Action",
+        "Distribution",
+        "EffectiveDate",
+        "EmplRecord",
+        "AnnualRate",
+        "Amount",
+        "EmplID",
+        "BusinessUnit",
+        "Department",
+        "EmplClass",
+        "EmplClassDesc",
+        "EffectiveSequence",
+        "ApptEndDate",
+        "SupervisorId",
+        "PersonOrg",
+        "JobCode",
+        "JobCodeDesc",
+        "PayFreq",
+        "EmplStatus",
+        "ActionDate",
+        "ActionReason",
+        "HireDate",
+        "TerminationDate",
+        "ExpectedReturnDate",
+        "ExpectedEndDate",
+        "Step",
+        "Compensation"
+      ],
+      "properties": {
+        "Location": {
+          "type": "string"
+        },
+        "Type": {
+          "type": "string"
+        },
+        "Position": {
+          "type": "array",
+          "items": {
+            "$ref": "Position"
+          }
+        },
+        "Action": {
+          "type": "string"
+        },
+        "Distribution": {
+          "type": "array",
+          "items": {
+            "$ref": "Distribution"
+          }
+        },
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EmplRecord": {
+          "type": "string"
+        },
+        "AnnualRate": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "BusinessUnit": {
+          "type": "string"
+        },
+        "Department": {
+          "type": "array",
+          "items": {
+            "$ref": "Department"
+          }
+        },
+        "EmplClass": {
+          "type": "string"
+        },
+        "EmplClassDesc": {
+          "type": "string"
+        },
+        "EffectiveSequence": {
+          "type": "string"
+        },
+        "ApptEndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "SupervisorId": {
+          "type": "string"
+        },
+        "PersonOrg": {
+          "type": "string"
+        },
+        "JobCode": {
+          "type": "string"
+        },
+        "JobCodeDesc": {
+          "type": "string"
+        },
+        "PayFreq": {
+          "type": "string"
+        },
+        "hRStatus": {
+          "type": "string"
+        },
+        "EmplStatus": {
+          "type": "string"
+        },
+        "ActionDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ActionReason": {
+          "type": "string"
+        },
+        "fTE": {
+          "type": "string"
+        },
+        "HireDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "TerminationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ExpectedReturnDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ExpectedEndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Step": {
+          "type": "string"
+        },
+        "Compensation": {
+          "type": "array",
+          "items": {
+            "$ref": "Compensation"
+          }
+        }
+      }
+    },
+    "Phone": {
+      "id": "Phone",
+      "required": [
+        "Extension",
+        "EmplID",
+        "CountryCode",
+        "PhoneType",
+        "PhoneNumber",
+        "PrefPhoneFlag"
+      ],
+      "properties": {
+        "Extension": {
+          "type": "string"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "CountryCode": {
+          "type": "string"
+        },
+        "PhoneType": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "PrefPhoneFlag": {
+          "type": "string"
+        }
+      }
+    },
+    "Person": {
+      "id": "Person",
+      "required": [
+        "Address",
+        "Name",
+        "Identifier",
+        "Email",
+        "EffectiveDate",
+        "EmplID",
+        "EmplType",
+        "EffectiveStatus",
+        "BusinessTitle",
+        "HomeDept",
+        "Department",
+        "Phone",
+        "Job"
+      ],
+      "properties": {
+        "Address": {
+          "type": "array",
+          "items": {
+            "$ref": "Address"
+          }
+        },
+        "Name": {
+          "type": "array",
+          "items": {
+            "$ref": "Name"
+          }
+        },
+        "Identifier": {
+          "$ref": "Identifier"
+        },
+        "Email": {
+          "type": "array",
+          "items": {
+            "$ref": "Email"
+          }
+        },
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "EmplType": {
+          "type": "string"
+        },
+        "EffectiveStatus": {
+          "type": "string"
+        },
+        "BusinessTitle": {
+          "type": "string"
+        },
+        "HomeDept": {
+          "type": "string"
+        },
+        "Department": {
+          "type": "array",
+          "items": {
+            "$ref": "Department"
+          }
+        },
+        "Phone": {
+          "type": "array",
+          "items": {
+            "$ref": "Phone"
+          }
+        },
+        "Job": {
+          "type": "array",
+          "items": {
+            "$ref": "Job"
+          }
+        },
+        "pOI": {
+          "$ref": "POI"
+        }
+      }
+    },
+    "Identifier": {
+      "id": "Identifier",
+      "required": [
+        "EmplID",
+        "BirthDate",
+        "Gender"
+      ],
+      "properties": {
+        "EmplID": {
+          "type": "string"
+        },
+        "BirthDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Gender": {
+          "type": "string"
+        }
+      }
+    },
+    "Distribution": {
+      "id": "Distribution",
+      "required": [
+        "EffectiveDate",
+        "EmplRecord",
+        "Amount",
+        "EmplID",
+        "DeptId",
+        "DeptDesc",
+        "PayBeginDate",
+        "PayEndDate",
+        "DistPct",
+        "BusinessUnit",
+        "Account",
+        "FundCode",
+        "ProgramCode",
+        "CharField1",
+        "CharField2",
+        "EarningCode",
+        "WorkStudyCode",
+        "BudgetedFte"
+      ],
+      "properties": {
+        "EffectiveDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "EmplRecord": {
+          "type": "string"
+        },
+        "Amount": {
+          "type": "string"
+        },
+        "EmplID": {
+          "type": "string"
+        },
+        "DeptId": {
+          "type": "string"
+        },
+        "DeptDesc": {
+          "type": "string"
+        },
+        "PayBeginDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "PayEndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "DistPct": {
+          "type": "string"
+        },
+        "BusinessUnit": {
+          "type": "string"
+        },
+        "Account": {
+          "type": "string"
+        },
+        "FundCode": {
+          "type": "string"
+        },
+        "ProgramCode": {
+          "type": "string"
+        },
+        "CharField1": {
+          "type": "string"
+        },
+        "CharField2": {
+          "type": "string"
+        },
+        "EarningCode": {
+          "type": "string"
+        },
+        "WorkStudyCode": {
+          "type": "string"
+        },
+        "BudgetedFte": {
+          "type": "string"
+        }
+      }
+    },
+    "PersonList": {
+      "id": "PersonList",
+      "required": [
+        "Person"
+      ],
+      "properties": {
+        "Person": {
+          "type": "array",
+          "items": {
+            "$ref": "Person"
+          }
+        }
+      }
+    }
+  }
+}
